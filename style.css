@@ -1,0 +1,54 @@
+#app {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.board {
+  font: 36px/20px Roboto, Arial;
+  margin: 50px;
+  display: grid;
+  grid-gap: 1vh;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+}
+
+.info {
+  display: flex;
+  background-color: lightgray;
+  padding: 10px 20px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  grid-column: span 3;
+  font-size: 0.5em;
+  margin: 15px 25px;
+}
+
+.cell {
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.player1 {
+  background-color: orange;
+}
+.cell.player1::before {
+  content: 'o';
+}
+
+.player2 {
+  background-color: aqua;
+}
+.cell.player2::before {
+  content: 'x';
+}
+.cell:not(.player):hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
